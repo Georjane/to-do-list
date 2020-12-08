@@ -10,7 +10,7 @@
   flex: 0 0 45rem;
   background-color: $cardbg;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 1rem;
   margin: 2rem;
 
   
@@ -34,16 +34,34 @@
     justify-content: center;
     align-items: center;
     background-color: $btncolor;
+    cursor: pointer;
   }
 
 
   &__add{
+    width: 20rem;
+    height: 20rem;
     background-color: $itemaddbg;
-    display: inline-flex;
+   
+    display:  flex;
    width: 100%;
-   height: 5rem;
+   height: 10rem;
    align-items: center;
   justify-content: center;
     
+  }
+
+  &__addlink{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__svg{
+
+    width: 10rem;
+    height: 10rem;
   }
 }
