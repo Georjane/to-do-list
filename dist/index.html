@@ -14,34 +14,22 @@
         <a href="#" class="header__btn">Add </a>
       </div>
       <!-- content -->
-      <div class="content">
-        <div class="category">
-          <input
-            type="text"
-            class="addCategory__input"
-            placeholder="Name your category"
-          />
-          <a href="#" class="addCategory__btn" id="adcategory"
-            >Create category</a
-          >
-        </div>
 
+      <div class="category">
+        <input type="text" class="category__input" placeholder="Name your category" />
+        <a href="#" class="category__btn" id="adcategory">Create category</a>
+      </div>
+      <div class="content">
         <div class="card">
           <h3 class="card__title">Default</h3>
-          <div class="card__item">
-            <input
-              class="card__checkbox"
-              type="checkbox"
-              name="check"
-              id="item1"
-            />
-            <p>Buy milk</p>
-            <p>Buy bread</p>
-            <p>Eat breakfast</p>
+          <span class="card__delete">X</span>
 
-            <a href="" class="card__edit">Edit</a>
-            <a href="" class="card__itemdel">Delete</a>
-            <a href="" class="card__delete"> X</a>
+          <div class="item">
+            <input class="item__checkbox" type="checkbox" name="check" id="item1" />
+            <p>Buy milk</p>
+            <a href="" class="item__edit">Edit</a>
+            <a href="" class="item__itemdel">Delete</a>
+            <a href="" class="item__delete"> X</a>
           </div>
         </div>
       </div>

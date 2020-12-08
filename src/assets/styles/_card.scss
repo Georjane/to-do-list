@@ -1,0 +1,31 @@
+.content{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+
+.card{ 
+  border: 1px solid #dddddd;
+  flex: 0 0 50rem;
+  background-color: $cardbg;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  
+  &__title{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: khaki;
+
+    }
+
+  &__close{}
+
+
+}
+
+.item{
+   
+
+  }
