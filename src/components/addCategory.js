@@ -38,6 +38,9 @@ export default function main() {
   }
 
 
+  function CreateItem() {
+
+  }
 
 
 
@@ -48,7 +51,7 @@ export default function main() {
     creatCatBtn.addEventListener('click', e => {
       if (creatCat.value.length < 3) {
 
-        alert("please enter a valdi category name")
+        alert("please enter a valid category name")
       } else {
         const newCat = new Category(creatCat.value)
         allCategories.push(newCat)
@@ -62,9 +65,33 @@ export default function main() {
 
   }
 
+
+
+
+
   CreateCategory();
 
   displayCategory()
+  const allAddToList = document.querySelectorAll('.additem__btn');
+
+  allAddToList.forEach(btn => {
+    btn.addEventListener('click', e => {
+      const creatItm = e.target.parentElement.firstChild.value;
+      const inputId = e.target.previousElementSibling.id;
+      
+      
+      allCategories.forEach(category => {
+        if(category.title === inputId) {
+          category.items.push(creatItm);
+          console.log(category.items);
+          createCard(category.title, category.items)
+        }
+        
+      })
+      
+      ;
+    })
+  })
 
   hash.allCat = allCategories
 }

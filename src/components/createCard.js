@@ -12,6 +12,8 @@ export default function createCard(title, arr) {
   const addItem = document.createElement('div');
   const addItemInput = document.createElement('input');
   const addItemBtn = document.createElement('a');
+  // const addItemBtn = document.createElement('button');
+  // addItemBtn.setAttribute('type', 'submit')
 
   addItem.classList.add('additem');
   addItemBtn.classList.add('additem__btn');
