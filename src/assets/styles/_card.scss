@@ -60,15 +60,12 @@
   }
 
   &__addlink{
-    width: 10rem;
-    height: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex;
+     svg{
+       fill:red;
+        
+     }
   }
 
-  &__svg{
-    width: 10rem;
-    height: 10rem;
-  }
+ 
 }
