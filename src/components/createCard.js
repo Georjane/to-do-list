@@ -25,6 +25,8 @@ export default function createCard(title, arr) {
   addItemBtn.textContent = "Add to the list";
   heading.textContent = title;
 
+  addItemInput.id = title;
+
   cardTitle.appendChild(heading);
   cardTitle.appendChild(cardDelete);
   cardTitle.appendChild(cardEdit);
