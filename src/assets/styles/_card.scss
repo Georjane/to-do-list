@@ -60,11 +60,31 @@
   }
 
   &__addlink{
-    width: 10rem;
-    height: 10rem;
-    background-image: url('../img/cross.svg');
+    cursor: pointer;
+    width: 5rem;
+ 
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgb(148, 95, 95);
+    
+    &:hover{
+      background-color: rgb(230, 0, 0);
+    }
    
   }
 
  
+}
+
+.additem{
+  display: none;
+ 
+  &__input{}
+
+
+  &__btn{}
+}
+
+.additem-display{
+  display: block;
 }

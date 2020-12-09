@@ -1,8 +1,6 @@
 
 export default function createCard(title, arr) {
-
   const content = document.querySelector('.content');
-
   const card = document.createElement('div');
   const heading = document.createElement('h3');
   const cardTitle = document.createElement('div');
@@ -11,18 +9,30 @@ export default function createCard(title, arr) {
   const cardAdd = document.createElement('div');
   const creatItem = document.createElement('a');
 
+  const addItem = document.createElement('div');
+  const addItemInput = document.createElement('input');
+  const addItemBtn = document.createElement('a');
+
+  addItem.classList.add('additem');
+  addItemBtn.classList.add('additem__btn');
+  addItemInput.classList.add('additem__input')
   card.classList.add('card');
   cardTitle.classList.add('card__title');
   cardDelete.classList.add('card__delete', 'commonbtn');
   cardEdit.classList.add('card__edit', 'commonbtn');
   cardAdd.classList.add('card__add');
   creatItem.classList.add('card__addlink');
+  addItemBtn.textContent = "Add to the list";
   heading.textContent = title;
 
   cardTitle.appendChild(heading);
   cardTitle.appendChild(cardDelete);
   cardTitle.appendChild(cardEdit);
   card.appendChild(cardTitle);
+
+  card.appendChild(addItem);
+  addItem.appendChild(addItemInput);
+  addItem.appendChild(addItemBtn);
 
 
   arr.forEach(i => {
@@ -53,6 +63,5 @@ export default function createCard(title, arr) {
   card.appendChild(cardAdd);
   cardAdd.appendChild(creatItem);
   content.appendChild(card);
-
 }
 
