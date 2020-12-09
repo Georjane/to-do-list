@@ -60,11 +60,10 @@
   }
 
   &__addlink{
-    display: inline-flex;
-     svg{
-       fill:red;
-        
-     }
+    width: 10rem;
+    height: 10rem;
+    background-image: url('../img/cross.svg');
+   
   }
 
  
