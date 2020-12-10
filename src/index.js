@@ -22,8 +22,7 @@ function svgrunner() {
     }
     )
   }
-
-  addToEach(del, "icon-cancel-circle", "grey");
+  addToEach(del, "icon-cancel-circle", "red");
   addToEach(edit, "icon-document-edit", "grey");
   addToEach(edititem, "icon-document-edit", "grey");
   addToEach(delititem, "icon-bin", "grey");
