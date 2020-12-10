@@ -5,6 +5,10 @@ import { hash } from './components/addCategory';
 
 main();
 
+let obj = [{'title1'},{'title2'}]
+Window.localStorage('hello', JSON.stringify(obj))
+const hello = localStorage.getItem('hello')
+alert(hello)
 
 // let addItemBtns = document.querySelectorAll('.card__addlink');
 
