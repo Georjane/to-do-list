@@ -2,7 +2,7 @@
   width: 100%;
  display: flex;
  justify-content: flex-end;
-// visibility: hidden;
+//  visibility: hidden;
  
 
   &__input{
@@ -20,7 +20,7 @@
   &__btn{
     display: inline-flex;
     padding: 1rem;
-    // flex: 0 1 15rem;
+    flex: 0 1 15rem;
     justify-content: center;
     align-items: center;
     height: 5rem;
@@ -33,5 +33,10 @@
     color: white;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
+
+    svg{
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
