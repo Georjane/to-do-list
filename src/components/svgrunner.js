@@ -6,7 +6,6 @@ export default function svgrunner() {
   let additembtn = document.querySelectorAll('.card__addlink')
   let categoryBtn = document.querySelectorAll('.category__btn')
 
-
   function addToEach(element, selector, fill) {
     element.forEach(function (el) {
       let svg = document.querySelector(`.${selector}`).cloneNode(true)

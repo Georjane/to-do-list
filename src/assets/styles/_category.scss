@@ -2,7 +2,8 @@
   width: 100%;
  display: flex;
  justify-content: flex-end;
-//  visibility: hidden;
+ opacity: 0;
+ transition: all .4s;
  
 
   &__input{
@@ -39,4 +40,8 @@
       height: 2rem;
     }
   }
+}
+
+.display{
+  opacity: 100;
 }
