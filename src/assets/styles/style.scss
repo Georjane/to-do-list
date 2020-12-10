@@ -28,6 +28,8 @@ body{
 .commonbtn{
   position: absolute;
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;

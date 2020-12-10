@@ -94,3 +94,26 @@
   transform: rotate(45deg);
 }
 
+
+
+.additem{
+  // visibility: hidden;
+  margin: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    justify-self: start;
+ 
+     
+    &__input{
+      flex: 1 1 100%;
+      background-color: #fff;
+      height: 4rem;
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+}

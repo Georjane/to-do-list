@@ -1,11 +1,7 @@
 import createCard from './createCard';
-
-
-let hash = {}
-
+import svgrunner from './svgrunner';
 
 export default function main() {
-
   class Category {
     constructor(title) {
       this.title = title;
@@ -14,10 +10,10 @@ export default function main() {
   }
 
 
+
+
   const allCategories = [];
-
   const content = document.querySelector('.content');
-
 
   const defaultCategory = new Category('Default1');
   const defaultCategory1 = new Category('Default2');
@@ -26,8 +22,6 @@ export default function main() {
   defaultCategory1.items.push('another thing');
   allCategories.push(defaultCategory);
   allCategories.push(defaultCategory1);
-
-
 
 
   function displayCategory() {
@@ -65,10 +59,6 @@ export default function main() {
 
   }
 
-
-
-
-
   CreateCategory();
 
   displayCategory()
@@ -78,22 +68,22 @@ export default function main() {
     btn.addEventListener('click', e => {
       const creatItm = e.target.parentElement.firstChild.value;
       const inputId = e.target.previousElementSibling.id;
-      
-      
+
+
       allCategories.forEach(category => {
-        if(category.title === inputId) {
+        if (category.title === inputId) {
           category.items.push(creatItm);
           console.log(category.items);
           createCard(category.title, category.items)
         }
-        
+
       })
-      
-      ;
+
+        ;
     })
   })
 
-  hash.allCat = allCategories
+  svgrunner()
+
 }
 
-export { hash }
