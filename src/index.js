@@ -5,38 +5,29 @@ import { hash } from './components/addCategory';
 
 main();
 
-let obj = [{'title1'},{'title2'}]
-Window.localStorage('hello', JSON.stringify(obj))
-const hello = localStorage.getItem('hello')
-alert(hello)
-
-// let addItemBtns = document.querySelectorAll('.card__addlink');
-
-// addItemBtns.forEach(item => {
-//   item.addEventListener('click', e => {
-//     let additem = e.target.parentElement.parentElement.children[1]
-//     let title = e.target.parentElement.parentElement.children[0].children[0].textContent
-//     let inputElt = e.target.parentElement.parentElement.children[1].children[0].id
-
-//     additem.classList.toggle('additem-display')
-//     let arr = hash.allCat
-//     arr.forEach(el => {
-
-//       if (el.title === title) {
-//         let addItemLink = document.querySelectorAll(".additem__btn")
-//         console.log(addItemLink);
-//         addItemLink.forEach(item => {
-//           item.addEventListener('click', e => {
-//             e.preventDefault();
-            
-//           })
 
 
-//         })
+function svgrunner() {
+  let del = document.querySelectorAll('.card__delete');
+  let edit = document.querySelectorAll('.card__edit');
+  let edititem = document.querySelectorAll('.item__edit');
+  let delititem = document.querySelectorAll('.item__del');
+
+  function addToEach(element, selector, fill) {
+    element.forEach(function (el) {
+      let svg = document.querySelector(`.${selector}`).cloneNode(true)
+      let clone = svg.cloneNode(true);
+      clone.style.fill = fill;
+      el.appendChild(clone);
+    }
+    )
+  }
+
+  addToEach(del, "icon-cancel-circle", "grey");
+  addToEach(edit, "icon-document-edit", "grey");
+  addToEach(edititem, "icon-document-edit", "grey");
+  addToEach(delititem, "icon-bin", "grey");
+}
 
 
-//       }
-//     })
-//   })
-// })
-
+svgrunner()
