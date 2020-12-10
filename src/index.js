@@ -26,6 +26,7 @@ btn.addEventListener('click', () => {
   }
 });
 
+// add item input toggle
 let cardToggleInput = document.querySelectorAll('.additem__btn')
 cardToggleInput.forEach(button => {
   button.addEventListener('click', function (e) {
