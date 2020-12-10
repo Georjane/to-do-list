@@ -26,3 +26,11 @@ btn.addEventListener('click', () => {
   }
 });
 
+let cardToggleInput = document.querySelectorAll('.additem__btn')
+cardToggleInput.forEach(button => {
+  button.addEventListener('click', function (e) {
+    let input = this.parentNode.parentNode.parentNode.children[1]
+    input.classList.toggle('additmVisible')
+  })
+
+})

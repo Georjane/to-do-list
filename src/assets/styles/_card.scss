@@ -92,8 +92,8 @@ justify-content: space-between;
 
 .additem{
   opacity: 0;
-  // transform: scaleY(0);
-  // margin: 1rem;
+  transform: scaleY(0);
+   
     padding: 1rem 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -103,6 +103,7 @@ justify-content: space-between;
     border: 1px solid #ddd;
     justify-self: start;
  margin-bottom: auto;
+ transition: all .3s;
      
     &__input{
       flex: 1 1 100%;
@@ -121,4 +122,9 @@ justify-content: space-between;
       background-color: red;
       color: white;
     }
+}
+
+.additmVisible{
+  opacity: 100;
+  transform: scaleY(1);
 }
