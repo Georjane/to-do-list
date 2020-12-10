@@ -4,7 +4,7 @@ export default function svgrunner() {
   let edititem = document.querySelectorAll('.item__edit');
   let delititem = document.querySelectorAll('.item__del');
   let additembtn = document.querySelectorAll('.card__addlink')
-  let categoryBtn = document.querySelectorAll('.category__btn')
+  // let categoryBtn = document.querySelectorAll('.category__btn')
 
   function addToEach(element, selector, fill) {
     element.forEach(function (el) {
@@ -20,5 +20,5 @@ export default function svgrunner() {
   addToEach(edititem, "icon-document-edit", "grey");
   addToEach(delititem, "icon-bin", "grey");
   addToEach(additembtn, "icon-plus", "grey");
-  addToEach(categoryBtn, "icon-plus", "white");
+  // addToEach(categoryBtn, "icon-plus", "white");
 }
