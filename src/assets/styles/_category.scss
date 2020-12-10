@@ -1,7 +1,19 @@
+
+.showCatCont{
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .category{
-  width: 100%;
- display: flex;
+  margin-right: 2rem;
+  width: 50%;
+ display: inline-flex;
  justify-content: flex-end;
+ align-items: center;
  opacity: 0;
  transition: all .4s;
  
@@ -21,7 +33,7 @@
   &__btn{
     display: inline-flex;
     padding: 1rem;
-    flex: 0 1 15rem;
+    flex: 0 0 15rem;
     justify-content: center;
     align-items: center;
     height: 5rem;
@@ -44,4 +56,21 @@
 
 .display{
   opacity: 100;
+}
+
+.showCatBtn{
+  cursor: pointer;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(102, 102, 102);
+  width:6rem ;
+  height: 6rem;
+
+  svg{
+    fill: white;
+    width: 4rem;
+    height: 4rem;
+  }
 }
