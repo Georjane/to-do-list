@@ -1,21 +1,35 @@
 import svgrunner from './svgrunner';
-
 import { cardToggleInput } from './eventListeners';
-
 import displayCategory from './displayCategory';
 
 
 export default function main() {
   //Define Constructor function for each category
+
+
+
   class Category {
+
+
     constructor(title) {
       this.title = title;
       this.items = [];
       this.addItem = (item) => {
         this.items.push(item);
-      }
+        this.setLocalstorage();
+      };
+      this.setLocalstorage();
     }
+    setLocalstorage() {
+      let obj = { [this.title]: this.items }
+      localStorage.setItem("todolist", JSON.stringify(obj));
+    }
+
+
+
   }
+
+
   class Item {
     constructor(title, description, dueDate, priority) {
       this.title = title;
@@ -31,18 +45,25 @@ export default function main() {
 
   //Default Categories
   const defaultCategory = new Category('Default1');
-  const defaultCategory1 = new Category('Default2');
-  defaultCategory.items.push('Buy milk and a lot of other great stuff');
-  defaultCategory1.items.push('say hello world', 'another thing');
-  allCategories.push(defaultCategory, defaultCategory1);
+  defaultCategory.items.push('apples');
+  defaultCategory.items.push('oranges');
+  allCategories.push(defaultCategory);
 
   //Display All Category Function
   displayCategory(allCategories)
-
   //Create a new Category
+
+
   function CreateCategory() {
     const creatCat = document.querySelector('.category__input');
     const creatCatBtn = document.querySelector('.category__btn');
+    // allCategories.forEach(title => {
+    //   localStorage.getItem(title);
+
+    //   console.log(title);
+    //   // JSON.parse(title)
+    // })
+
 
     creatCatBtn.addEventListener('click', e => {
       if (creatCat.value.length < 3) {
@@ -50,10 +71,13 @@ export default function main() {
       } else {
         const newCat = new Category(creatCat.value)
         allCategories.push(newCat)
+
+
+
         displayCategory(allCategories);
+
         svgrunner();
         creatCat.value = "";
-        // return newCat
         cardToggleInput();
 
       }
