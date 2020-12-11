@@ -1,4 +1,4 @@
-
+import appendItems from './appendItems';
 import { createItems } from './eventListeners';
 
 
@@ -18,13 +18,7 @@ export default function displayCategory(arr) {
     const addItem = document.createElement('div');
     const addItemBtn = document.createElement('a');
 
-    //Eventlistener to add item
-
-
-
-    createItems(btn, category, addItemInput, arr)
-
-
+    //adding classes 
     addItem.classList.add('additem');
     addItemBtn.classList.add('additem__btn');
     addItemInput.classList.add('additem__input')
@@ -36,7 +30,10 @@ export default function displayCategory(arr) {
     addItemBtn.classList.add('card__addlink');
     heading.textContent = category.title;
     btn.textContent = 'Add Item';
+
     addItemInput.id = category.title;
+
+    // appending stuff
     cardTitle.appendChild(heading);
     cardTitle.appendChild(cardDelete);
     cardTitle.appendChild(cardEdit);
@@ -47,30 +44,12 @@ export default function displayCategory(arr) {
     addItem.appendChild(btn);
 
 
-    //Create items
-    category.items.forEach(i => {
-      const item = document.createElement('div');
-      const label = document.createElement('label');
-      const checkoxInput = document.createElement('input');
-      const checkmark = document.createElement('span');
-      const itemEdit = document.createElement('a');
-      const itemDelete = document.createElement('a');
-      label.textContent = i
-      item.classList.add('item');
-      label.classList.add('ch__container');
-      checkoxInput.classList.add('checkbox');
-      checkmark.classList.add('checkmark');
-      itemEdit.classList.add('item__edit', 'commonbtn');
-      itemDelete.classList.add('item__del', 'commonbtn');
-      checkoxInput.setAttribute('type', 'checkbox')
-      item.appendChild(label);
-      label.appendChild(checkoxInput)
-      label.appendChild(checkmark)
-      item.appendChild(itemEdit)
-      item.appendChild(itemDelete)
-      card.appendChild(item)
-    })
 
+    appendItems(category, card)
+
+
+    //Eventlistener to add item
+    createItems(btn, category, addItemInput, arr)
     card.appendChild(cardAdd);
     cardAdd.appendChild(addItemBtn);
     content.appendChild(card);
