@@ -1,7 +1,5 @@
 import appendItems from './appendItems';
 import { createItems } from './eventListeners';
-
-
 const content = document.querySelector('.content');
 export default function displayCategory(arr) {
   content.innerHTML = '';
@@ -43,11 +41,7 @@ export default function displayCategory(arr) {
     addItem.appendChild(addItemInput);
     addItem.appendChild(btn);
 
-
-
     appendItems(category, card)
-
-
     //Eventlistener to add item
     createItems(btn, category, addItemInput, arr)
     card.appendChild(cardAdd);
