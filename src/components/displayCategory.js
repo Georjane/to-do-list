@@ -1,5 +1,5 @@
 import svgrunner from './svgrunner';
-import { cardToggleInput } from './eventListeners';
+import { cardToggleInput, createItems } from './eventListeners';
 const content = document.querySelector('.content');
 export default function displayCategory(arr) {
   content.innerHTML = '';
@@ -18,13 +18,10 @@ export default function displayCategory(arr) {
 
     //Eventlistener to add item
 
-    btn.addEventListener('click', () => {
-      category.items.push(addItemInput.value);
-      localStorage.setItem("todolist", JSON.stringify(arr));
-      displayCategory(arr);
-      svgrunner();
-      cardToggleInput();
-    })
+
+
+    createItems(btn, category, addItemInput)
+
 
     addItem.classList.add('additem');
     addItemBtn.classList.add('additem__btn');

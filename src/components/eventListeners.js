@@ -29,5 +29,17 @@ function createCatFunctionality() {
   });
 }
 
+function createItems(btn, category, addItemInput) {
+  btn.addEventListener('click', () => {
+    category.items.push(addItemInput.value);
+    localStorage.setItem("todolist", JSON.stringify(arr));
+    displayCategory(arr);
+    svgrunner();
+    cardToggleInput();
+  })
+}
 
-export { createCatFunctionality, cardToggleInput }
+
+
+
+export { createCatFunctionality, cardToggleInput, createItems }
