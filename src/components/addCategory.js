@@ -16,14 +16,14 @@ export default function main() {
       this.items = [];
       this.addItem = (item) => {
         this.items.push(item);
-        this.setLocalstorage();
+        // this.setLocalstorage();
       };
-      this.setLocalstorage();
+      // this.setLocalstorage();
     }
-    setLocalstorage() {
-      let obj = { [this.title]: this.items }
-      localStorage.setItem("todolist", JSON.stringify(obj));
-    }
+    // setLocalstorage() {
+    //   let obj = { [this.title]: this.items }
+    //   localStorage.setItem("todolist", JSON.stringify(obj));
+    // }
 
 
 
@@ -44,38 +44,41 @@ export default function main() {
 
 
   //Default Categories
-  const defaultCategory = new Category('Default1');
-  defaultCategory.items.push('apples');
-  defaultCategory.items.push('oranges');
-  allCategories.push(defaultCategory);
+  // const defaultCategory = new Category('Default1');
+  // defaultCategory.items.push('apples');
+  // defaultCategory.items.push('oranges');
+  // allCategories.push(defaultCategory);
 
   //Display All Category Function
-  displayCategory(allCategories)
-  //Create a new Category
+
+
+  function getLocalObj() {
+    let locaStArray = JSON.parse(localStorage.getItem("todolist"));
+    let locaStArr = []
+    if (locaStArray) {
+      locaStArray.forEach(element => {
+        locaStArr.push(element)
+      });
+    }
+    else {
+      return allCategories
+    }
+    return locaStArr
+  }
+
 
 
   function CreateCategory() {
     const creatCat = document.querySelector('.category__input');
     const creatCatBtn = document.querySelector('.category__btn');
-    // allCategories.forEach(title => {
-    //   localStorage.getItem(title);
-
-    //   console.log(title);
-    //   // JSON.parse(title)
-    // })
-
-
     creatCatBtn.addEventListener('click', e => {
       if (creatCat.value.length < 3) {
         alert("please enter a valid category name")
       } else {
         const newCat = new Category(creatCat.value)
         allCategories.push(newCat)
-
-
-
-        displayCategory(allCategories);
-
+        localStorage.setItem("todolist", JSON.stringify(allCategories));
+        displayCategory(getLocalObj());
         svgrunner();
         creatCat.value = "";
         cardToggleInput();
@@ -86,10 +89,13 @@ export default function main() {
 
   }
 
+
+
+
+
   CreateCategory();
-  displayCategory(allCategories);
+  displayCategory(getLocalObj());
   svgrunner();
   cardToggleInput();
-
 
 }

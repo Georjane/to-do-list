@@ -20,6 +20,7 @@ export default function displayCategory(arr) {
 
     btn.addEventListener('click', () => {
       category.addItem(addItemInput.value);
+      localStorage.setItem("todolist", JSON.stringify(arr));
       displayCategory(arr);
       svgrunner();
       cardToggleInput();
