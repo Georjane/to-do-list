@@ -1,5 +1,7 @@
-import svgrunner from './svgrunner';
-import { cardToggleInput, createItems } from './eventListeners';
+
+import { createItems } from './eventListeners';
+
+
 const content = document.querySelector('.content');
 export default function displayCategory(arr) {
   content.innerHTML = '';
@@ -20,7 +22,7 @@ export default function displayCategory(arr) {
 
 
 
-    createItems(btn, category, addItemInput)
+    createItems(btn, category, addItemInput, arr)
 
 
     addItem.classList.add('additem');

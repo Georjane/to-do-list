@@ -1,3 +1,6 @@
+import displayCategory from './displayCategory';
+import svgrunner from './svgrunner';
+
 function cardToggleInput() {
   let cardToggleInput = document.querySelectorAll('.additem__btn')
   cardToggleInput.forEach(button => {
@@ -29,7 +32,7 @@ function createCatFunctionality() {
   });
 }
 
-function createItems(btn, category, addItemInput) {
+function createItems(btn, category, addItemInput, arr) {
   btn.addEventListener('click', () => {
     category.items.push(addItemInput.value);
     localStorage.setItem("todolist", JSON.stringify(arr));
