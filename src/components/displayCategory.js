@@ -19,7 +19,7 @@ export default function displayCategory(arr) {
     //Eventlistener to add item
 
     btn.addEventListener('click', () => {
-      category.addItem(addItemInput.value);
+      category.items.push(addItemInput.value);
       localStorage.setItem("todolist", JSON.stringify(arr));
       displayCategory(arr);
       svgrunner();

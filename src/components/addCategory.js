@@ -44,10 +44,10 @@ export default function main() {
 
 
   //Default Categories
-  // const defaultCategory = new Category('Default1');
-  // defaultCategory.items.push('apples');
-  // defaultCategory.items.push('oranges');
-  // allCategories.push(defaultCategory);
+  const defaultCategory = new Category('Default1');
+  defaultCategory.items.push('apples');
+  defaultCategory.items.push('oranges');
+  allCategories.push(defaultCategory);
 
   //Display All Category Function
 
