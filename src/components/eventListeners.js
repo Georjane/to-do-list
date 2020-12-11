@@ -17,7 +17,6 @@ function cardToggleInput() {
 
 function createCatFunctionality() {
   let btn = document.querySelector('.showCatBtn')
-
   btn.addEventListener('click', () => {
     let cat = document.querySelector('.category')
     function removeCurrent(curr) {
@@ -38,13 +37,16 @@ function createCatFunctionality() {
   });
 }
 
+//Create Items
 function createItems(btn, category, addItemInput, arr) {
+
   btn.addEventListener('click', () => {
-    category.items.push(addItemInput.value);
-    localStorage.setItem("todolist", JSON.stringify(arr));
+    category.items.unshift(addItemInput.value);
+
     displayCategory(arr);
     svgrunner();
     cardToggleInput();
+    localStorage.setItem("todolist", JSON.stringify(arr));
   })
 }
 

@@ -1,6 +1,7 @@
 import appendItems from './appendItems';
 import { createItems } from './eventListeners';
 const content = document.querySelector('.content');
+
 export default function displayCategory(arr) {
   content.innerHTML = '';
   arr.forEach(category => {
@@ -41,8 +42,9 @@ export default function displayCategory(arr) {
     addItem.appendChild(addItemInput);
     addItem.appendChild(btn);
 
+    // Append items to the cattegory
+
     appendItems(category, card)
-    //Eventlistener to add item
     createItems(btn, category, addItemInput, arr)
     card.appendChild(cardAdd);
     cardAdd.appendChild(addItemBtn);

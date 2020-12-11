@@ -1,4 +1,5 @@
 export default function appendItems(category, card) {
+
   category.items.forEach(i => {
     const item = document.createElement('div');
     const label = document.createElement('label');
