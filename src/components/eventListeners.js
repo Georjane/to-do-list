@@ -1,19 +1,19 @@
-import displayCategory from './displayCategory';
-import svgrunner from './svgrunner';
+// import displayCategory from './createCard';
+// import svgrunner from './svgrunner';
 
-function cardToggleInput() {
-  let cardToggleInput = document.querySelectorAll('.additem__btn')
-  cardToggleInput.forEach(button => {
-    button.addEventListener('click', function (e) {
-      let input = this.parentNode.parentNode.children[1]
-      input.classList.toggle('additmVisible')
-      if (input.classList.contains('additmVisible')) {
-        input.firstChild.focus()
-      }
-    })
+// function cardToggleInput() {
+//   let cardToggleInput = document.querySelectorAll('.additem__btn')
+//   cardToggleInput.forEach(button => {
+//     button.addEventListener('click', function (e) {
+//       let input = this.parentNode.parentNode.children[1]
+//       input.classList.toggle('additmVisible')
+//       if (input.classList.contains('additmVisible')) {
+//         input.firstChild.focus()
+//       }
+//     })
 
-  })
-}
+//   })
+// }
 
 function createCatFunctionality() {
   let btn = document.querySelector('.showCatBtn')
@@ -37,20 +37,20 @@ function createCatFunctionality() {
   });
 }
 
-//Create Items
-function createItems(btn, category, addItemInput, arr) {
+// //Create Items
+// function createItems(btn, category, addItemInput, arr) {
 
-  btn.addEventListener('click', () => {
-    category.items.unshift(addItemInput.value);
+//   btn.addEventListener('click', () => {
+//     category.items.unshift(addItemInput.value);
 
-    displayCategory(arr);
-    svgrunner();
-    cardToggleInput();
-    localStorage.setItem("todolist", JSON.stringify(arr));
-  })
-}
-
-
+//     displayCategory(arr);
+//     svgrunner();
+//     cardToggleInput();
+//     localStorage.setItem("todolist", JSON.stringify(arr));
+//   })
+// }
 
 
-export { createCatFunctionality, cardToggleInput, createItems }
+export { createCatFunctionality }
+
+// export { createCatFunctionality, cardToggleInput, createItems }
