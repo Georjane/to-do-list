@@ -8,7 +8,7 @@ function createElement(type, className, parent) {
   return newEl
 }
 
-function createCard(title) {
+function createCard(title, items) {
   const content = document.querySelector('.content');
   let card = createElement('div', 'card', content)
   let cardTitle = createElement('div', 'card__title', card);
@@ -32,9 +32,16 @@ function createCard(title) {
   btn.textContent = 'Add Item';
 
   let container = createElement('div', 'item_container', card);
+
   let cardAdd = createElement('div', 'card__add', card);
   let addItemBtn = createElement('a', 'card__addlink', cardAdd);
   svgSet(addItemBtn, "icon-plus", "grey");
+
+
+  // inseting items into each card
+  items.forEach(item => {
+    createItem(container, item.title)
+  });
 
   //Event listeners
   cardImputToggleEvent(addItemBtn)
