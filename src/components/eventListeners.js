@@ -15,9 +15,11 @@ function cardImputToggleEvent(button) {
 function createCatFunctionality() {
   let btn = document.querySelector('.showCatBtn');
   let btninput = document.querySelector('.category__btn');
+  let input = document.querySelector('.category__input')
   svgSet(btninput, "icon-plus", "white");
 
   btn.addEventListener('click', () => {
+    input.focus()
     let cat = document.querySelector('.category')
     function removeCurrent(curr) {
       let current = document.querySelector(`${curr}`).cloneNode(true)
@@ -28,6 +30,7 @@ function createCatFunctionality() {
     }
     if (cat.classList.contains("display")) {
       removeCurrent(`.icon-plus`)
+
     } else {
       removeCurrent(`.icon-minus`)
     }
@@ -51,5 +54,3 @@ function createCatFunctionality() {
 
 
 export { createCatFunctionality, cardImputToggleEvent }
-
-// export { createCatFunctionality, cardToggleInput, createItems }

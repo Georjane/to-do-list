@@ -19,7 +19,7 @@
  
 
   &__input{
-    flex: 0 0 35vw;
+    flex: 0 0 50vw;
       height: 5rem;
       padding: 2rem;
       border-top-left-radius: 5px;
@@ -34,7 +34,7 @@
     flex: 0 0 20vw;
     display: inline-flex;
     padding: 1rem;
- 
+ cursor: pointer;
     justify-content: center;
     align-items: center;
     height: 5rem;

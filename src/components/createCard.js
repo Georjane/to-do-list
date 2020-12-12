@@ -34,8 +34,9 @@ function createCard(title) {
   let container = createElement('div', 'item_container', card);
   let cardAdd = createElement('div', 'card__add', card);
   let addItemBtn = createElement('a', 'card__addlink', cardAdd);
-
   svgSet(addItemBtn, "icon-plus", "grey");
+
+  //Event listeners
   cardImputToggleEvent(addItemBtn)
 }
 

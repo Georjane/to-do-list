@@ -1,13 +1,14 @@
 
 .item{
   margin: 1rem;
-  padding: 1rem 2rem;
+
   display: flex;
   align-items: center;
   background-color: white;
   border-radius: 5px;
   border: 1px solid #dddddd;
   position: relative;
+  padding: 1.5rem ;
   padding-bottom: 4rem;
 
     &__edit{
@@ -54,8 +55,8 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 3rem;
+  width: 3rem;
   background-color: #eee;
 }
 
@@ -86,7 +87,7 @@
   left: 1rem;
   top: 0;
   width: 1rem;
-  height: 2.5rem;
+  height: 2rem;
   border: solid white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);

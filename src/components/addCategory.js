@@ -17,8 +17,6 @@ export default function main() {
       this.duedate = duedate;
       this.checked = checked
     }
-
-
   }
 
   const allData = []
@@ -36,7 +34,7 @@ export default function main() {
   creatCatbtn.addEventListener('click', e => {
     let title = input.value
     createCard(title)
-    svgrunner()
+
   })
 
 }
