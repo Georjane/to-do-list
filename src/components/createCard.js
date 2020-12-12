@@ -1,6 +1,6 @@
 
 import svgSet from './svgSet';
-
+import { cardImputToggleEvent } from './eventListeners';
 function createElement(type, className, parent) {
   let newEl = document.createElement(type);
   newEl.classList.add(className);
@@ -36,7 +36,7 @@ function createCard(title) {
   let addItemBtn = createElement('a', 'card__addlink', cardAdd);
 
   svgSet(addItemBtn, "icon-plus", "grey");
-
+  cardImputToggleEvent(addItemBtn)
 }
 
 function createItem(parent, text) {

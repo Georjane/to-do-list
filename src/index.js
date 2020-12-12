@@ -9,6 +9,7 @@ main();
 
 createCatFunctionality()
 createCard()
+
 let itmCont = document.querySelector('.item_container')
 createItem(itmCont, "hello")
 

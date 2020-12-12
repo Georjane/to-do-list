@@ -1,19 +1,16 @@
 // import displayCategory from './createCard';
 import svgSet from './svgSet';
 
-// function cardToggleInput() {
-//   let cardToggleInput = document.querySelectorAll('.additem__btn')
-//   cardToggleInput.forEach(button => {
-//     button.addEventListener('click', function (e) {
-//       let input = this.parentNode.parentNode.children[1]
-//       input.classList.toggle('additmVisible')
-//       if (input.classList.contains('additmVisible')) {
-//         input.firstChild.focus()
-//       }
-//     })
 
-//   })
-// }
+function cardImputToggleEvent(button) {
+  button.addEventListener('click', function (e) {
+    let input = this.parentNode.parentNode.children[1]
+    input.classList.toggle('additmVisible')
+    if (input.classList.contains('additmVisible')) {
+      input.firstChild.focus()
+    }
+  })
+}
 
 function createCatFunctionality() {
   let btn = document.querySelector('.showCatBtn');
@@ -53,6 +50,6 @@ function createCatFunctionality() {
 // }
 
 
-export { createCatFunctionality }
+export { createCatFunctionality, cardImputToggleEvent }
 
 // export { createCatFunctionality, cardToggleInput, createItems }
