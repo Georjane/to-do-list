@@ -1,5 +1,5 @@
 // import displayCategory from './createCard';
-// import svgrunner from './svgrunner';
+import svgSet from './svgSet';
 
 // function cardToggleInput() {
 //   let cardToggleInput = document.querySelectorAll('.additem__btn')
@@ -16,7 +16,10 @@
 // }
 
 function createCatFunctionality() {
-  let btn = document.querySelector('.showCatBtn')
+  let btn = document.querySelector('.showCatBtn');
+  let btninput = document.querySelector('.category__btn');
+  svgSet(btninput, "icon-plus", "white");
+
   btn.addEventListener('click', () => {
     let cat = document.querySelector('.category')
     function removeCurrent(curr) {
@@ -26,15 +29,14 @@ function createCatFunctionality() {
       btn.innerHTML = ""
       btn.appendChild(clone);
     }
-
     if (cat.classList.contains("display")) {
       removeCurrent(`.icon-plus`)
-
     } else {
       removeCurrent(`.icon-minus`)
     }
     cat.classList.toggle('display')
   });
+
 }
 
 // //Create Items

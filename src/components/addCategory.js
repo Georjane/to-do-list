@@ -1,5 +1,5 @@
 import { createCard, createItem } from './createCard';
-import svgrunner from './svgrunner';
+import svgrunner from './svgSet';
 
 export default function main() {
   //   //Define Constructor function for each category
@@ -28,10 +28,17 @@ export default function main() {
     allData.push(category)
   }
   categoryCreator("Default");
-  // category.addItem() new Tododos("First thing")
-  // category.items = new Tododos("Second thing", "We have to sleep now")
-  // allData.push(category)
   console.log(allData);
+
+  let creatCatbtn = document.querySelector('.category__btn')
+  let input = document.querySelector('.category__input');
+
+  creatCatbtn.addEventListener('click', e => {
+    let title = input.value
+    createCard(title)
+    svgrunner()
+  })
+
 }
 
 

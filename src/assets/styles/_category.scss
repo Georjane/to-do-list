@@ -1,10 +1,8 @@
 
 .showCatCont{
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: flex;   
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 
@@ -15,12 +13,13 @@
  justify-content: flex-end;
  align-items: center;
  opacity: 0;
- transform: scaleY(0);
- transition: all .4s;
+ transform: scaleX(0);
+ transform-origin: top right;
+ transition: all .3s;
  
 
   &__input{
-    flex: 0 0 40rem;
+    flex: 0 0 35vw;
       height: 5rem;
       padding: 2rem;
       border-top-left-radius: 5px;
@@ -32,9 +31,10 @@
 
 
   &__btn{
+    flex: 0 0 20vw;
     display: inline-flex;
     padding: 1rem;
-    flex: 0 0 15rem;
+ 
     justify-content: center;
     align-items: center;
     height: 5rem;
@@ -57,7 +57,7 @@
 
 .display{
   opacity: 100;
-  transform: scaleY(1);
+  transform: scaleX(1);
 }
 
 .showCatBtn{
