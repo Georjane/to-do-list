@@ -39,9 +39,16 @@ function createCard(title, items = []) {
   let btn = createElement('button', 'additem__btn', addItem);
 
   svgSet(btn, "icon-plus", "white");
+
   // btn.textContent = 'Add Item';
 
   let container = createElement('div', 'item_container', card);
+  btn.addEventListener('click', () => {
+    let item = addItemInput.value
+    createItem(container, item)
+    lcStSetter()
+    addItemInput.value = "";
+  })
 
   let cardAdd = createElement('div', 'card__add', card);
   let addItemBtn = createElement('a', 'card__addlink', cardAdd);
@@ -68,9 +75,15 @@ function createItem(parent, text) {
   let itemEdit = createElement('span', 'item__edit', item)
   svgSet(itemEdit, "icon-document-edit", "grey");
   itemEdit.classList.add('commonbtn')
+
+
   let itemDelete = createElement('span', 'item__del', item);
   svgSet(itemDelete, "icon-bin", "grey");
-  itemDelete.classList.add('commonbtn')
+  itemDelete.classList.add('commonbtn');
+  itemDelete.addEventListener('click', () => {
+    item.remove()
+    lcStSetter()
+  })
 }
 
 export { createCard, createItem }
