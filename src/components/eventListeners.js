@@ -1,8 +1,8 @@
-// import displayCategory from './createCard';
+
 import svgSet from './svgSet';
 
 function cardImputToggleEvent(button) {
-  button.addEventListener('click', function (e) {
+  button.addEventListener('click', function () {
     let input = this.parentNode.parentNode.children[1]
     input.classList.toggle('additmVisible')
     if (input.classList.contains('additmVisible')) {
@@ -39,5 +39,14 @@ function createCatFunctionality() {
 }
 
 
+function createCatBtn(createCard, lcStSetter) {
+  let btninput = document.querySelector('.category__btn');
+  btninput.addEventListener('click', () => {
+    let title = document.querySelector('.category__input')
+    createCard(title.value)
+    lcStSetter()
+  })
+}
 
-export { createCatFunctionality, cardImputToggleEvent }
+
+export { createCatFunctionality, cardImputToggleEvent, createCatBtn }

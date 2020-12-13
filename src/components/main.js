@@ -1,11 +1,12 @@
 import { createCard } from './createCard';
-
+import { createCatBtn } from './eventListeners';
+import lcStSetter from './localstorage';
 
 export default function main() {
   //   //Define Constructor function for each category
   const allData = []
   const { Category, Todo } = require("./classes");
-
+  createCatBtn(createCard, lcStSetter)
 
 
   // let def = new Category("Default");

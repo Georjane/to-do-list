@@ -11,7 +11,7 @@ function createElement(type, className, parent) {
   return newEl
 }
 
-function createCard(title, items) {
+function createCard(title, items = []) {
   const content = document.querySelector('.content');
   let card = createElement('div', 'card', content)
   let cardTitle = createElement('div', 'card__title', card);
@@ -37,7 +37,9 @@ function createCard(title, items) {
   let addItemInput = createElement('input', 'additem__input', addItem);
   addItemInput.setAttribute("type", "text");
   let btn = createElement('button', 'additem__btn', addItem);
-  btn.textContent = 'Add Item';
+
+  svgSet(btn, "icon-plus", "white");
+  // btn.textContent = 'Add Item';
 
   let container = createElement('div', 'item_container', card);
 
@@ -47,10 +49,11 @@ function createCard(title, items) {
 
 
   // inseting items into each card
-  items.forEach(item => {
-    createItem(container, item.title)
-  });
-
+  if (items.length > 0) {
+    items.forEach(item => {
+      createItem(container, item.title)
+    });
+  }
   //Event listeners
   cardImputToggleEvent(addItemBtn)
 }
