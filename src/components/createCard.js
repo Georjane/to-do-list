@@ -1,6 +1,9 @@
 
 import svgSet from './svgSet';
 import { cardImputToggleEvent } from './eventListeners';
+
+import lcStSetter from './localstorage';
+
 function createElement(type, className, parent) {
   let newEl = document.createElement(type);
   newEl.classList.add(className);
@@ -15,8 +18,13 @@ function createCard(title, items) {
   let heading = createElement('h3', 'card__h3', cardTitle);
   heading.textContent = title
   let cardDelete = createElement('a', 'card__delete', cardTitle);
-
   svgSet(cardDelete, "icon-cancel-circle", "grey");
+
+  cardDelete.addEventListener('click', () => {
+    cardDelete.parentNode.parentNode.remove()
+    lcStSetter()
+  })
+
 
   cardDelete.classList.add('commonbtn');
   let cardEdit = createElement('a', 'card__edit', cardTitle);

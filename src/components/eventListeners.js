@@ -1,7 +1,6 @@
 // import displayCategory from './createCard';
 import svgSet from './svgSet';
 
-
 function cardImputToggleEvent(button) {
   button.addEventListener('click', function (e) {
     let input = this.parentNode.parentNode.children[1]
@@ -39,18 +38,6 @@ function createCatFunctionality() {
 
 }
 
-// //Create Items
-// function createItems(btn, category, addItemInput, arr) {
-
-//   btn.addEventListener('click', () => {
-//     category.items.unshift(addItemInput.value);
-
-//     displayCategory(arr);
-//     svgrunner();
-//     cardToggleInput();
-//     localStorage.setItem("todolist", JSON.stringify(arr));
-//   })
-// }
 
 
 export { createCatFunctionality, cardImputToggleEvent }
