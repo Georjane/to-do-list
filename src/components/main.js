@@ -9,18 +9,22 @@ export default function main() {
   createCatBtn(createCard, lcStSetter)
 
 
-  // let def = new Category("Default");
-  // let second = new Category("Second");
-  // let items = new Todo("Your first todo")
-  // let item = new Todo("second to do", "just fuck it", 12, true)
-  // let it = new Todo("tester", "well well", 12, false)
-  // def.items.push(items)
-  // def.items.push(item)
-  // def.items.push(it)
+  function setDefaults() {
+    let retrieved = JSON.parse(localStorage.getItem("todolist"));
+    if (!retrieved) {
+      let def = new Category("Default");
+      let first = new Todo("First thing to do ..", "just fuck it", 12, true)
+      let second = new Todo("Second thing todo ...", "well well", 12, false)
+      def.items.push(first)
+      def.items.push(second)
+      allData.push(def)
+      localStorage.setItem("todolist", JSON.stringify(allData));
+    }
 
-  // allData.push(def);
-  // allData.push(second)
-  // localStorage.setItem("todolist", JSON.stringify(allData));
+  }
+  setDefaults()
+
+
 
 
   function lcStRetriever() {

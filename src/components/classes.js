@@ -7,11 +7,12 @@ class Category {
   }
 }
 class Todo {
-  constructor(title, description = '', duedate = '', checked = false) {
+  constructor(title, checked = false, description = '', duedate = '') {
     this.title = title;
+    this.checked = checked;
     this.description = description;
     this.duedate = duedate;
-    this.checked = checked
+
   }
 }
 

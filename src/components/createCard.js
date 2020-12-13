@@ -66,15 +66,26 @@ function createCard(title, items = []) {
 }
 
 function createItem(parent, text) {
-  let item = createElement('div', 'item', parent)
-  let label = createElement('label', 'ch__container', item)
-  label.textContent = text
-  let checkoxInput = createElement('input', 'checkbox', label)
-  checkoxInput.setAttribute('type', 'checkbox')
-  const checkmark = createElement('span', 'checkmark', label)
-  let itemEdit = createElement('span', 'item__edit', item)
+  let item = createElement('div', 'item', parent);
+  let label = createElement('label', 'ch__container', item);
+  label.textContent = text;
+
+
+  label.addEventListener('click', () => {
+    if (!label.classList.contains("completed")) {
+      label.classList.add("completed")
+      lcStSetter()
+    } else {
+    }
+
+  })
+
+  let checkoxInput = createElement('input', 'checkbox', label);
+  checkoxInput.setAttribute('type', 'checkbox');
+  const checkmark = createElement('span', 'checkmark', label);
+  let itemEdit = createElement('span', 'item__edit', item);
   svgSet(itemEdit, "icon-document-edit", "grey");
-  itemEdit.classList.add('commonbtn')
+  itemEdit.classList.add('commonbtn');
 
 
   let itemDelete = createElement('span', 'item__del', item);

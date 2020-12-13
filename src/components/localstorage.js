@@ -12,8 +12,12 @@ export default function lcStSetter() {
     if (container.childNodes.length > 0); {
       let items = container.childNodes;
       items.forEach(item => {
+        let checked = false;
+        if (item.firstChild.classList.contains('completed')) {
+          checked = true
+        }
         let itemText = item.firstChild.textContent;
-        let todo = new Todo(itemText);
+        let todo = new Todo(itemText, checked);
         category.items.push(todo)
       })
     }
