@@ -7,7 +7,7 @@ We made use of the following:
 - Use of JavaScript functions and loops
 
 ## To-do list gif
-![]()
+![screenshot](./src/assets/todo.gif)
 
 ## Built With
 - HTML
