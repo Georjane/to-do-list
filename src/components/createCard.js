@@ -25,12 +25,10 @@ function createCard(title, items = []) {
     lcStSetter()
   })
 
-
   cardDelete.classList.add('commonbtn');
   let cardEdit = createElement('a', 'card__edit', cardTitle);
 
   svgSet(cardEdit, "icon-document-edit", "grey");
-
 
   cardEdit.classList.add('commonbtn');
   let addItem = createElement('div', 'additem', card);
@@ -50,6 +48,14 @@ function createCard(title, items = []) {
     addItemInput.value = "";
   })
 
+  addItemInput.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      btn.click();
+    }
+  });
+
+
   let cardAdd = createElement('div', 'card__add', card);
   let addItemBtn = createElement('a', 'card__addlink', cardAdd);
   svgSet(addItemBtn, "icon-plus", "grey");
@@ -58,31 +64,39 @@ function createCard(title, items = []) {
   // inseting items into each card
   if (items.length > 0) {
     items.forEach(item => {
-      createItem(container, item.title)
+      createItem(container, item.title, item.checked)
     });
   }
   //Event listeners
   cardImputToggleEvent(addItemBtn)
 }
 
-function createItem(parent, text) {
+function createItem(parent, text, checked = false) {
   let item = createElement('div', 'item', parent);
-  let label = createElement('label', 'ch__container', item);
-  label.textContent = text;
+  let lab = createElement('label', 'ch__container', item);
+  lab.textContent = text;
 
+  let checkboxInput = createElement('input', 'checkbox', lab);
+  checkboxInput.setAttribute('type', 'checkbox');
 
-  label.addEventListener('click', () => {
-    if (!label.classList.contains("completed")) {
-      label.classList.add("completed")
+  checkboxInput.addEventListener('change', function () {
+    if (this.checked) {
+      lab.classList.add("completed")
       lcStSetter()
     } else {
+      lab.classList.remove("completed")
+      lcStSetter()
     }
+  });
 
-  })
 
-  let checkoxInput = createElement('input', 'checkbox', label);
-  checkoxInput.setAttribute('type', 'checkbox');
-  const checkmark = createElement('span', 'checkmark', label);
+  if (checked) {
+    checkboxInput.checked = true;
+    lab.classList.add("completed")
+  }
+
+
+  const checkmark = createElement('span', 'checkmark', lab);
   let itemEdit = createElement('span', 'item__edit', item);
   svgSet(itemEdit, "icon-document-edit", "grey");
   itemEdit.classList.add('commonbtn');

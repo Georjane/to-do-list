@@ -41,11 +41,18 @@ function createCatFunctionality() {
 
 function createCatBtn(createCard, lcStSetter) {
   let btninput = document.querySelector('.category__btn');
+  let input = document.querySelector('.category__input')
   btninput.addEventListener('click', () => {
-    let title = document.querySelector('.category__input')
-    createCard(title.value)
+    createCard(input.value)
     lcStSetter()
   })
+
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      btninput.click();
+    }
+  });
 }
 
 

@@ -13,14 +13,13 @@ export default function main() {
     let retrieved = JSON.parse(localStorage.getItem("todolist"));
     if (!retrieved) {
       let def = new Category("Default");
-      let first = new Todo("First thing to do ..", "just fuck it", 12, true)
-      let second = new Todo("Second thing todo ...", "well well", 12, false)
+      let first = new Todo("First thing to do ..", true, "your description", 12)
+      let second = new Todo("Second thing todo ...", false, "your second description", 12)
       def.items.push(first)
       def.items.push(second)
       allData.push(def)
       localStorage.setItem("todolist", JSON.stringify(allData));
     }
-
   }
   setDefaults()
 
