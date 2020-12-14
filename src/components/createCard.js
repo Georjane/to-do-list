@@ -72,13 +72,12 @@ function createCard(title, items = []) {
   const container = createElement('div', 'item_container', card);
   btn.addEventListener('click', () => {
     if (addItemInput.value === '') {
-      addItemInput.classList.add('error_class')
-      addItemInput.setAttribute('placeholder', 'Empty item title not permitted!')
-      return;
+      addItemInput.classList.add('error_class');
+      addItemInput.setAttribute('placeholder', 'Empty item title not permitted!');
     } else {
       const item = addItemInput.value;
-      addItemInput.classList.remove('error_class')
-      addItemInput.setAttribute('placeholder', '')
+      addItemInput.classList.remove('error_class');
+      addItemInput.setAttribute('placeholder', '');
       createItem(container, item);
       lcStSetter();
       addItemInput.value = '';

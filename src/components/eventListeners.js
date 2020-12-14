@@ -43,12 +43,11 @@ function createCatBtn(createCard, lcStSetter) {
   btninput.addEventListener('click', () => {
     if (input.value.length < 3) {
       input.value = '';
-      input.classList.add('error_class')
-      input.setAttribute('placeholder', 'Your category title is either empty or too short!')
-      return;
-    } else {      
-      input.classList.remove('error_class')
-      input.setAttribute('placeholder', '')
+      input.classList.add('error_class');
+      input.setAttribute('placeholder', 'Your category title is either empty or too short!');
+    } else {
+      input.classList.remove('error_class');
+      input.setAttribute('placeholder', '');
       createCard(input.value);
       input.value = '';
       lcStSetter();
