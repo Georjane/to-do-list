@@ -1,27 +1,28 @@
 
-const { Category, Todo } = require("./classes");
+const { Category } = require('./categoryClass');
+const { Todo } = require('./todoClass');
 
 
 export default function lcStSetter() {
-  let allData = [];
-  let cards = document.querySelectorAll('.card')
+  const allData = [];
+  const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
-    let title = card.firstChild.firstChild.textContent;
-    let category = new Category(title);
-    let container = card.querySelector(".item_container")
+    const title = card.firstChild.firstChild.textContent;
+    const category = new Category(title);
+    const container = card.querySelector('.item_container');
     if (container.childNodes.length > 0); {
-      let items = container.childNodes;
+      const items = container.childNodes;
       items.forEach(item => {
         let checked = false;
         if (item.firstChild.classList.contains('completed')) {
-          checked = true
+          checked = true;
         }
-        let itemText = item.firstChild.textContent;
-        let todo = new Todo(itemText, checked);
-        category.items.push(todo)
-      })
+        const itemText = item.firstChild.textContent;
+        const todo = new Todo(itemText, checked);
+        category.items.push(todo);
+      });
     }
-    allData.push(category)
-  })
-  localStorage.setItem("todolist", JSON.stringify(allData));
+    allData.push(category);
+  });
+  localStorage.setItem('todolist', JSON.stringify(allData));
 }

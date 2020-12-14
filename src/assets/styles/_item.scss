@@ -1,33 +1,30 @@
 
-.item{
+.item {
   margin: 1rem;
-
   display: flex;
   align-items: center;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   position: relative;
-  padding: 1.5rem ;
+  padding: 1.5rem;
   padding-bottom: 4rem;
 
-    &__edit{
-      bottom: 5px;
-      right: 4rem;
-    }
-
-    &__del{
-      bottom: 5px;
-      right: 5px;
-    }
-
-    &__checkbox{
-      margin: 2rem;
-    }
+  &__edit {
+    bottom: 5px;
+    right: 4rem;
   }
 
+  &__del {
+    bottom: 5px;
+    right: 5px;
+  }
 
- 
+  &__checkbox {
+    margin: 2rem;
+  }
+}
+
 .ch__container {
   display: block;
   position: relative;
@@ -40,13 +37,17 @@
   -ms-user-select: none;
   user-select: none;
 }
- 
+
 .ch__container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
+}
+
+.error_class {
+  border: 1px solid red;
 }
 
 /* Create a custom checkbox */
@@ -71,19 +72,14 @@
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkmark::after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
-.ch__container input:checked ~ .checkmark:after {
-  display: block;
-}
-
 /* Style the checkmark/indicator */
-.ch__container .checkmark:after {
+.ch__container .checkmark::after {
   left: 1rem;
   top: 0;
   width: 1rem;
@@ -95,7 +91,11 @@
   transform: rotate(45deg);
 }
 
+/* Show the checkmark when checked */
+.ch__container input:checked ~ .checkmark::after {
+  display: block;
+}
 
-.completed{
+.completed {
   text-decoration: line-through;
 }

@@ -1,46 +1,49 @@
-.content{
+.content {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 5rem;
 }
 
-.card{ 
-  border: 1px solid #dddddd;
+.additem__btn svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
   flex: 0 0 45rem;
   background-color: $cardbg;
   overflow: hidden;
   border-radius: 1rem;
   margin: 2rem;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  
-  &__title{
+  &__title {
     width: 100%;
     height: 5rem;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;   
+    text-align: center;
     background-color: lightblue;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    }
+  }
 
-  &__delete{
+  &__delete {
     top: 50%;
     transform: translateY(-50%);
     right: 2%;
     justify-content: center;
     align-items: center;
-  
     cursor: pointer;
   }
 
-  &__edit{
+  &__edit {
     top: 50%;
     transform: translateY(-50%);
     right: 10%;
@@ -49,19 +52,16 @@ justify-content: space-between;
     cursor: pointer;
   }
 
-  &__add{
-    width: 20rem;
-    height: 20rem;
+  &__add {
     background-color: $itemaddbg;
-    display:  flex;
+    display: flex;
     width: 100%;
     height: 10rem;
     align-items: center;
     justify-content: center;
-    
   }
 
-  &__addlink{
+  &__addlink {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -69,67 +69,60 @@ justify-content: space-between;
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
-    transition: all .3s;
-  
-    svg{
-    width: 4rem;
-    height: 4rem;
-    transition: all .3s;
+    transition: all 0.3s;
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+      transition: all 0.3s;
     }
-    
-    &:hover{
+
+    &:hover {
       background-color: #8f97a5;
     }
-    &:hover svg{
+
+    &:hover svg {
       transform: scale(1.4);
-     
     }
   }
-
- 
 }
 
-
-.additem{
+.additem {
   opacity: 0;
   transform: scaleY(0);
-   
-    padding: 1rem 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  justify-self: start;
+  margin-bottom: auto;
+  transition: all 0.3s;
+
+  &__input {
+    flex: 1 1 100%;
     background-color: #fff;
+    height: 4rem;
+    padding: 1rem;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    justify-self: start;
- margin-bottom: auto;
- transition: all .3s;
-     
-    &__input{
-      flex: 1 1 100%;
-      background-color: #fff;
-      height: 4rem;
-      padding: 1rem;
-      border-radius: 5px;
-      border: 1px solid rgba(73, 73, 73, 0.26);
-    }
-    &__btn{
-      cursor: pointer;
-      margin-top: 1rem;
-      width: 100%;
-      height: 4rem;
-      border: none;
-      border-radius: 5px;
-      background-color: red;
-      color: white;
-      svg{
-        width: 2rem;
-        height: 2rem;
-      }
-    }
+    border: 1px solid rgba(73, 73, 73, 0.26);
+  }
+
+  &__btn {
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+  }
 }
 
-.additmVisible{
+.additmVisible {
   opacity: 100;
   transform: scaleY(1);
 }

@@ -3,11 +3,5 @@ import { createCatFunctionality } from './components/eventListeners';
 import main from './components/main';
 
 
-createCatFunctionality()
+createCatFunctionality();
 main();
-
-
-
-
-
-

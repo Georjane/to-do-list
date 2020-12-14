@@ -1,40 +1,37 @@
 
-.showCatCont{
-  display: flex;   
+.showCatCont {
+  display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-
-.category{
+.category {
   margin-right: 2rem;
   width: 50%;
- display: inline-flex;
- justify-content: flex-end;
- align-items: center;
- opacity: 0;
- transform: scaleX(0);
- transform-origin: top right;
- transition: all .3s;
- 
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: all 0.3s;
 
-  &__input{
+  &__input {
     flex: 0 0 50vw;
-      height: 5rem;
-      padding: 2rem;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border: 1px solid #c2c2c2;
-      border-right: 0;
-      outline: none;
+    height: 5rem;
+    padding: 2rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #c2c2c2;
+    border-right: 0;
+    outline: none;
   }
 
-
-  &__btn{
+  &__btn {
     flex: 0 0 20vw;
     display: inline-flex;
     padding: 1rem;
- cursor: pointer;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
     height: 5rem;
@@ -48,30 +45,29 @@
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
 
-    svg{
+    svg {
       width: 2rem;
       height: 2rem;
     }
   }
 }
 
-.display{
+.display {
   opacity: 100;
   transform: scaleX(1);
 }
 
-.showCatBtn{
+.showCatBtn {
   cursor: pointer;
-  display:inline-flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
- 
   background-color: rgb(102, 102, 102);
   border-radius: 5px;
-  width:5rem ;
+  width: 5rem;
   height: 5rem;
 
-  svg{
+  svg {
     fill: white;
     width: 4rem;
     height: 4rem;

@@ -2,32 +2,32 @@ import { createCard } from './createCard';
 import { createCatBtn } from './eventListeners';
 import lcStSetter from './localstorage';
 
-const { Category, Todo } = require("./classes");
+const { Category } = require('./categoryClass');
+const { Todo } = require('./todoClass');
+
 export default function main() {
-  //Define Constructor function for each category
-  const allData = []
-  createCatBtn(createCard, lcStSetter)
+  // Define Constructor function for each category
+  const allData = [];
+  createCatBtn(createCard, lcStSetter);
 
 
   function setDefaults() {
-    let retrieved = JSON.parse(localStorage.getItem("todolist"));
+    const retrieved = JSON.parse(localStorage.getItem('todolist'));
     if (!retrieved) {
-      let def = new Category("Default");
-      let first = new Todo("First thing to do ..", true, "your description", 12)
-      let second = new Todo("Second thing todo ...", false, "your second description", 12)
-      def.items.push(first)
-      def.items.push(second)
-      allData.push(def)
-      localStorage.setItem("todolist", JSON.stringify(allData));
+      const def = new Category('Default');
+      const first = new Todo('First thing to do ..', true, 'your description', 12);
+      const second = new Todo('Second thing todo ...', false, 'your second description', 12);
+      def.items.push(first);
+      def.items.push(second);
+      allData.push(def);
+      localStorage.setItem('todolist', JSON.stringify(allData));
     }
   }
-  setDefaults()
-
-
+  setDefaults();
 
 
   function lcStRetriever() {
-    let retrieved = JSON.parse(localStorage.getItem("todolist"));
+    const retrieved = JSON.parse(localStorage.getItem('todolist'));
     if (retrieved) {
       retrieved.forEach(category => {
         createCard(category.title, category.items);
@@ -35,9 +35,5 @@ export default function main() {
     }
   }
 
-  lcStRetriever()
-  // lcStSetter()
-
-
+  lcStRetriever();
 }
-
