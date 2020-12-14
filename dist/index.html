@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+    <link rel="shortcut icon" href="../src/assets/img/cancel-circle.svg" type="image/x-icon" />
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    
+    <div class="svgs">
+      <svg class="sicon-cross">
+        <use href="./sprite.svg#icon-cross"></use>
+     </svg>  
+     <svg class="icon-cancel-circle">
+      <use href="./sprite.svg#icon-cancel-circle"></use>
+    </svg>  
+    <svg class="icon-plus">
+      <use href="./sprite.svg#icon-plus"></use>
+    </svg>  
+
+    <svg class="icon-bin">
+      <use href="./sprite.svg#icon-bin"></use>
+    </svg> 
+    
+    <svg class="icon-document-edit">
+      <use href="./sprite.svg#icon-document-edit"></use>
+    </svg> 
+    
+    <svg class="icon-folder-add">
+      <use href="./sprite.svg#icon-folder-add"></use>
+    </svg>
+    <svg class="icon-minus">
+      <use href="./sprite.svg#icon-minus"></use>
+    </svg>
+
+    </div>
+    <div class="container">
+ 
+
+ 
+      <!-- add a category -->
+      <div class="showCatCont">
+
+      <div class="category">
+        <input type="text" class="category__input" placeholder="Name your category" />
+        <a href="#" class="category__btn" id="adcategory"> </a>
+      </div>
+
+      <div class="showCatBtn">
+        <svg class="showCatBtn__svg">
+          <use href="./sprite.svg#icon-plus"></use>
+        </svg>  
+      </div>
+    </div>
+      <!-- content -->
+      <div class="content">
+      </div>
+    </div>
+  </body>
+</html>
