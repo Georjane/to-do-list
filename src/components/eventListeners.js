@@ -43,8 +43,13 @@ function createCatBtn(createCard, lcStSetter) {
   let btninput = document.querySelector('.category__btn');
   let input = document.querySelector('.category__input')
   btninput.addEventListener('click', () => {
-    createCard(input.value)
-    lcStSetter()
+    if (input.value.length < 3){
+      alert('Your category title is either empty or too short! Please try again')
+    }else{      
+      createCard(input.value)
+      input.value = '';
+      lcStSetter()
+    }
   })
 
   input.addEventListener("keyup", function (event) {

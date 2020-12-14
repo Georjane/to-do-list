@@ -42,10 +42,14 @@ function createCard(title, items = []) {
 
   let container = createElement('div', 'item_container', card);
   btn.addEventListener('click', () => {
-    let item = addItemInput.value
-    createItem(container, item)
-    lcStSetter()
-    addItemInput.value = "";
+    if (addItemInput.value === ''){
+      alert('Empty item title not permitted! Please try again')
+    }else{      
+      let item = addItemInput.value
+      createItem(container, item)
+      lcStSetter()
+      addItemInput.value = "";
+    }
   })
 
   addItemInput.addEventListener("keyup", function (event) {
